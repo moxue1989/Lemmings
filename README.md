@@ -5,9 +5,13 @@
   - people
   - birds
 
+  - player occlusion: https://answers.unity.com/questions/44815/make-object-transparent-when-between-camera-and-pl.html
+
 ## Scope Creep:
   - dogs
   - shaders
+
+
 
 ## Pallete
 #### link
@@ -26,3 +30,10 @@ https://lospec.com/palette-list/matriax8c
   - grey: '#736464'
   - black: '#101820'
 
+generation rules
+
+- tree (starting point)
+- buildings
+
+bounds: 
+  -5:5
