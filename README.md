@@ -1,13 +1,15 @@
-MVP:
+# SEED SIMULATOR 5000
+
+### MVP:
   - town model
   - people
   - birds
 
-Scope Creep:
+### Scope Creep:
   - dogs
   - shaders
 
-Pallete:
+### Pallete:
   link: https://lospec.com/palette-list/matriax8c
   png: https://lospec.com/palette-list/matriax8c-32x.png
   white: '#f0f0dc'
