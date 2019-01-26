@@ -7,7 +7,7 @@ public class Building : MonoBehaviour
 
     int size = 20;
     Transform[] points;
-    public Transform pointPrefab;
+    public Transform buildingObject;
 
     // Start is called before the first frame update
     void Start()
@@ -17,7 +17,7 @@ public class Building : MonoBehaviour
         
         for (int i = 0; i < size; i += 2)
         {
-            Transform point = Instantiate(pointPrefab);
+            Transform point = Instantiate(buildingObject);
             point.localScale = new Vector3(1,1,1);
             point.SetParent(transform, false);
             points[i] = point;
