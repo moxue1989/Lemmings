@@ -10,8 +10,28 @@
 ## Scope Creep:
   - dogs
   - shaders
+  - seed cam animations (seed moods - happy / longing)
 
-
+## Assets
+	Lemmings\Sprites
+	- Start / End Tiles
+		- tree
+		- fertile_ground
+	- Wall Tiles
+		- brick
+		- door
+		- window
+	- Player
+		- seed_player
+	- Seed Cam 
+		- seed_spin
+		- seed_stand
+		- seed_victory
+	- Birds
+		- bluebird_walk
+		- greenbird_walk
+		- lovebird_walk
+		- yellowbird_walk
 
 ## Pallete
 #### link

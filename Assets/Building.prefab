@@ -22,7 +22,6 @@ GameObject:
   - component: {fileID: 33210403068893790}
   - component: {fileID: 65921051459279168}
   - component: {fileID: 23908783844182346}
-  - component: {fileID: 114394342240043258}
   m_Layer: 0
   m_Name: Building
   m_TagString: Untagged
@@ -57,7 +56,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 5ae347b090ec17b4d9b93daf098f75d8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -96,14 +95,3 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114394342240043258
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1239630058274336}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c56ddd1a98565d34ebd3185246c78463, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
