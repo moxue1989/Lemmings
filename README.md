@@ -13,7 +13,7 @@
   - seed cam animations (seed moods - happy / longing)
 
 ## Assets
-	Lemmings\Sprites
+	Sprites
 	- Start / End Tiles
 		- tree
 		- fertile_ground
@@ -32,6 +32,17 @@
 		- greenbird_walk
 		- lovebird_walk
 		- yellowbird_walk
+		
+	Audio
+	- UI SFX
+		- click (player clicks button)
+	- Player SFX
+		- bonk (seed hits wall)
+		- flick (player flicks seed)
+		- latch (seed hits latchable object)
+	- Music
+		- level start
+		- level win
 
 ## Pallete
 #### link
