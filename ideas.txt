@@ -1,0 +1,10 @@
+MVP:
+
+- town model
+- people
+- birds
+
+Scope Creep:
+
+- dogs
+- shaders
