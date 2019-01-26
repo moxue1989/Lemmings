@@ -38,6 +38,7 @@
 		- button_level 1
 		- button_win
 		- button_fail
+		- logo (game logo)
 		
 	Audio
 	- UI SFX
