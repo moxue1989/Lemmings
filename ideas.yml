@@ -1,15 +1,15 @@
 MVP:
-
-- town model
-- people
-- birds
+  - town model
+  - people
+  - birds
 
 Scope Creep:
-
-- dogs
-- shaders
+  - dogs
+  - shaders
 
 Pallete:
+  link: https://lospec.com/palette-list/matriax8c
+  png: https://lospec.com/palette-list/matriax8c-32x.png
   white: '#f0f0dc'
   yellow: '#fac800'
   green: '#10c840'
