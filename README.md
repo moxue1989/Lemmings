@@ -32,6 +32,12 @@
 		- greenbird_walk
 		- lovebird_walk
 		- yellowbird_walk
+	- Buttons
+		- button_start
+	- Text Boxes
+		- button_level 1
+		- button_win
+		- button_fail
 		
 	Audio
 	- UI SFX
@@ -40,6 +46,8 @@
 		- bonk (seed hits wall)
 		- flick (player flicks seed)
 		- latch (seed hits latchable object)
+	- Level SFX
+		 - danger throb (when health gets low)
 	- Music
 		- level start
 		- level win
