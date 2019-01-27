@@ -11,6 +11,12 @@
   - dogs
   - shaders
   - seed cam animations (seed moods - happy / longing)
+  
+## VSTs
+	https://woolyss.com/chipmusic-plugins.php
+	- ChipWave
+	- Retro Boy
+
 
 ## Assets
 	Sprites
