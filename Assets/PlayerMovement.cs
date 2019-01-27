@@ -5,13 +5,13 @@ public class PlayerMovement : MonoBehaviour {
 
 	public float speed = 5.0f;
 
-	private Rigidbody self;
+	private Transform self;
 	private float inputX;
 	private float inputY;
 	private Vector2 cumulativeMovement;
 
 	void Start () {
-		self = GetComponent<Rigidbody> ();
+		self = GetComponent<Transform> ();
 	}
 
 	void Update () {
@@ -19,9 +19,9 @@ public class PlayerMovement : MonoBehaviour {
 	}
 
 	void FixedUpdate(){
-		self.MovePosition (
-			self.position + ( speed * Time.deltaTime * GetMovement () )
-		);
+		
+			self.position += ( speed * Time.deltaTime * GetMovement () );
+		
 	}
 
 	private Vector3 GetMovement(){
