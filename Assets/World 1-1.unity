@@ -1050,7 +1050,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1407327721}
   m_LocalRotation: {x: 0, y: 0.38268343, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: 2.22, y: 5, z: 4.95}
+  m_LocalPosition: {x: 2.06, y: 5.95, z: -1.79}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1302,7 +1302,6 @@ MonoBehaviour:
   speed: 5
   goal: {fileID: 546432583}
   world: {fileID: 1013634757}
-  timer: {fileID: 0}
 --- !u!1 &1981162083
 GameObject:
   m_ObjectHideFlags: 0
