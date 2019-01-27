@@ -17,25 +17,28 @@ public class World : MonoBehaviour {
 	public Transform blueBirdObject;
 	public Transform yellowBirdObject;
 	public Transform Birds;
-	private bool _gameOver;
+    public Transform player;
+
+    private bool _gameOver;
 	private bool _isWin;
 
 	public Transform Roads;
 	public Transform Trees;
 	int road_u;
 	int road_v;
+    protected internal List<GameObject> GameObjects = new List<GameObject>();
 
-	// Use this for initialization
+    // Use this for initialization
 	void Start () {
 
-		// N roads
-		// birds
-		// park
-		// buildings
-		// houses
-		
-		worldGrid = new Transform[grid_u, grid_v];
-
+        // N roads
+        // birds
+        // park
+        // buildings
+	    // houses
+	    
+        worldGrid = new Transform[grid_u, grid_v];
+        
 		for(int i = 0; i < road_max; i++) {
 			// make roads
 			bool is_u = Random.value > 0.5f;
@@ -58,7 +61,10 @@ public class World : MonoBehaviour {
 		for(int i = 0; i < bird_count; i++) {
 			bool is_blueBird = Random.value > 0.5f;
 			Transform bird = Instantiate(is_blueBird ? blueBirdObject : yellowBirdObject);
-			bird.localPosition = new Vector3(Random.Range(-8,8),2,Random.Range(-8,8));
+
+		    GameObjects.Add(bird.gameObject);
+
+            bird.localPosition = new Vector3(Random.Range(-8,8),2,Random.Range(-8,8));
 			bird.SetParent(Birds, false);
 
 		}
@@ -68,11 +74,23 @@ public class World : MonoBehaviour {
 
 	}
 
+    public void reset()
+    {
+        _gameOver = false;
+        foreach (GameObject o in GameObjects)
+        {
+            Destroy(o);
+        }
+        Start();
+        player.position = new Vector3(-8f, 0.6f, 8f);
+    }
+
 	void DrawRoad (bool is_u, int road_coordinate) {
 		for (int k = 0; k < (is_u ? grid_u : grid_v) ; k++) {
 			
 			Transform road = Instantiate(roadObject);
-			road.SetParent(Roads, false);
+		    GameObjects.Add(road.gameObject);
+            road.SetParent(Roads, false);
 			road.localPosition = is_u ? new Vector3(road_coordinate,0,k - 9.55f) : new Vector3(k - 9.55f,0,road_coordinate);
 			if(is_u) {
 				road.Rotate(0,90,0);
@@ -85,7 +103,8 @@ public class World : MonoBehaviour {
 	}	
 	Transform GenerateTree (int u, int v) {
 		Transform tree = Instantiate(treeObject);
-		tree.localPosition = new Vector3(u - grid_u/2,1,v - grid_v/2);
+	    GameObjects.Add(tree.gameObject);
+	    tree.localPosition = new Vector3(u - grid_u/2,1,v - grid_v/2);
 		tree.SetParent(Trees, false);
 		return tree;
 	}
