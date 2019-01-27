@@ -42,6 +42,7 @@ public class GameManager : MonoBehaviour
             }
 
             _world.reset();
+<<<<<<< HEAD
             score.GetComponent<TextMesh>().text = "Score " + _wins
                                                            + "\nLosses " + _loses;
             startTime = Time.fixedTime;
@@ -56,6 +57,9 @@ public class GameManager : MonoBehaviour
             }
 
             timer.GetComponent<TextMesh>().text = "" + timeRemaining;
+=======
+            score.GetComponent<TextMesh>().text = "Score " + _wins;
+>>>>>>> 9d23f757f0201639df70b0a503c578020a7305fe
         }
     }
 }

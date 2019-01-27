@@ -25,36 +25,14 @@ public class PlayerMovement : MonoBehaviour {
 	    Vector3 selfPosition = self.transform.position;
 
 	    Vector3 vector3 = goalPosition - selfPosition;
-        
 
 	    if (vector3.magnitude <= 1)
 	    {
             world.endGame(true);
 	    }
-
-	    if (selfPosition.y <= -1)
-	    {
-	        world.endGame(false);
-        }
 	}
 
-    void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.name == "PowerUp")
-        {
-            collision.gameObject.SetActive(false);
-            StartCoroutine(SpeedPowerUp());
-        }
-    }
-
-    IEnumerator SpeedPowerUp()
-    {
-        speed *= 2;
-        yield return new WaitForSeconds(20f);
-        speed /= 2;
-    }
-
-    void FixedUpdate(){
+	void FixedUpdate(){
 		
 			self.position += ( speed * Time.deltaTime * GetMovement () );
 		
