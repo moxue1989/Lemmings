@@ -18,6 +18,7 @@ public class World : MonoBehaviour {
 	public Transform yellowBirdObject;
 	public Transform Birds;
     public Transform player;
+    public Transform goal;
 
     private bool _gameOver;
 	private bool _isWin;
@@ -69,10 +70,20 @@ public class World : MonoBehaviour {
 
 		}
 
-		// call navmesh builder
-		// feed result to actor for pathfinding
+	    int playerX = Random.Range(0, grid_u) - grid_u/2;
+	    int playerZ = Random.Range(0, grid_v) - grid_v/2;
 
-	}
+	    int goalX = Random.Range(0, grid_u) - grid_u / 2;
+	    int goalZ = Random.Range(0, grid_v) - grid_v / 2;
+
+
+	    player.position = new Vector3(playerX, 0.6f, playerZ);
+	    goal.position = new Vector3(goalX, 0.6f, goalZ);
+        
+        // call navmesh builder
+        // feed result to actor for pathfinding
+
+    }
 
     public void reset()
     {
@@ -82,7 +93,6 @@ public class World : MonoBehaviour {
             Destroy(o);
         }
         Start();
-        player.position = new Vector3(-8f, 0.6f, 8f);
     }
 
 	void DrawRoad (bool is_u, int road_coordinate) {
