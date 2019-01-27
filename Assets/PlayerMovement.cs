@@ -5,8 +5,8 @@ public class PlayerMovement : MonoBehaviour {
 
 	public float speed = 5.0f;
 
-    public Transform goal;
-    public World world;
+	public Transform goal;
+	public World world;
 
 	private Rigidbody self;
 	private float inputX;
