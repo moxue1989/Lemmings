@@ -64,6 +64,10 @@ public class World : MonoBehaviour {
 		// plane
 		int plane_z = Random.Range(offset * -1,offset);
 		Transform plane = Instantiate(planeObject);
+		GameObject plane_object = plane.gameObject;
+		var script = plane_object.GetComponent<Plane>();
+		script.plane_velocity = Random.Range(1.0f,2.0f);
+//		script.plane_velocity = 10;
 	    plane.localPosition = new Vector3(14,8,plane_z);
 	    GameObjects.Add(plane.gameObject);
 	

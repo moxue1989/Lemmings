@@ -14,6 +14,6 @@ public class Plane : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-	transform.Translate(Vector3.left * Time.deltaTime);
+	transform.Translate(Vector3.left * Time.deltaTime * plane_velocity);
     }
 }
