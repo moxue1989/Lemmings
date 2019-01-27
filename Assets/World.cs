@@ -63,6 +63,9 @@ public class World : MonoBehaviour {
 			}
 		}
 
+		PathingController.get_instance().call_me_first(worldGrid, grid_u, grid_v);
+		PathingController.get_instance().recompute_minimums();
+			
 		// plane
 		int plane_z = Random.Range(offset * -1,offset);
 		Transform plane = Instantiate(planeObject);
@@ -105,9 +108,8 @@ public class World : MonoBehaviour {
         
 			// call navmesh builder
 			// feed result to actor for pathfinding
-			PathingController.get_instance().call_me_first(worldGrid, grid_u, grid_v);
-			PathingController.get_instance().recompute_minimums();
-    }
+			// ReturnGridPosition(goalX, goalZ);
+		}
 
     public void reset()
     {
@@ -136,10 +138,23 @@ public class World : MonoBehaviour {
 		}
 	}	
 
+	int[] ReturnGridPosition(float x, float z) {
+		int u = Mathf.FloorToInt(x + offset);
+		int v = Mathf.FloorToInt(z + offset);
+		int[] val = {u,v};
+		// Debug.Log(val[0]);
+		// Debug.Log(val[1]);
+		return val;
+	}
+
 	int GenerateTree (int u, int v) {
 		Transform tree = Instantiate(treeObject);
 	    GameObjects.Add(tree.gameObject);
-	    tree.localPosition = new Vector3(u - offset,Random.value,v - offset);
+	    tree.localPosition = new Vector3(
+				u - offset,
+				Random.value,
+				v - offset
+			);
 		tree.SetParent(Trees, false);
 		return 100;
 	}
