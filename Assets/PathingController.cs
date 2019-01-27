@@ -6,7 +6,7 @@ public class PathingController
 {
     static PathingController instance;
     double [,,,] dist;
-    int [,] next;
+    GridCoord [,] next;
     int [,] weights;
     int num_vertices;
     int num_vertices_x;
@@ -28,7 +28,7 @@ public class PathingController
         num_vertices = x*y;
         weights = materials;
         dist = new double[x,y,x,y];
-        next = new int [x,y];
+        next = new GridCoord [x,y];
         Debug.Log(new Vector2(x,y));
         // For each source-destination vertex pair, initialize:
         for(int i=0;i<x;i++){
@@ -93,7 +93,7 @@ public class PathingController
                                 double alt = dist[i,j,a,b] + dist[a,b,k,l];
                                 if(alt < dist[i,j,k,l]){
                                     dist[i,j,k,l] = alt;
-                                    next[i,j] = Mathf.FloorToInt((float)alt);
+                                    next[i,j] = new GridCoord(k,l,alt);
                                 }
                             }
                         }
@@ -121,5 +121,17 @@ public class PathingController
             }
         }
         return 0;
+    }
+}
+
+public struct GridCoord
+{
+    int x,y;
+    double dist;
+    public GridCoord(int p1, int p2, double d)
+    {
+        x=p1;
+        y=p2;
+        dist=d;
     }
 }
