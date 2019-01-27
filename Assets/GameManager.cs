@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class GameManager : MonoBehaviour
 {
     public World _world;
+    public GameObject score;
+
     public int _wins = 0;
     public int _loses = 0;
 
@@ -35,6 +38,7 @@ public class GameManager : MonoBehaviour
                 _loses++;
             }
             _world.reset();
+            score.GetComponent<TextMesh>().text = "Score " + _wins;
         }
     }
 }
