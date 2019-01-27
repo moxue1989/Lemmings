@@ -11,12 +11,6 @@
   - dogs
   - shaders
   - seed cam animations (seed moods - happy / longing)
-  
-## VSTs
-	https://woolyss.com/chipmusic-plugins.php
-	- ChipWave
-	- Retro Boy
-
 
 ## Assets
 	Sprites
@@ -24,17 +18,11 @@
 		- tree
 		- fertile_ground
 	- Wall Tiles
+		- brick
 		- door
 		- window
-		- forest_floor
-		- asphalt
-		- brick
-		- gray brick
-		- wood
-		- stucco
 	- Player
 		- seed_player
-		- seed cam
 	- Seed Cam 
 		- seed_spin
 		- seed_stand
@@ -44,13 +32,6 @@
 		- greenbird_walk
 		- lovebird_walk
 		- yellowbird_walk
-	- Other Characters
-		- alien
-		- dog
-		- satellite
-		- plane
-		- satellite
-			
 	- Buttons
 		- button_start
 	- Text Boxes
@@ -58,8 +39,6 @@
 		- button_win
 		- button_fail
 		- logo (game logo)
-		- scoreboard
-		
 		
 	Audio
 	- UI SFX

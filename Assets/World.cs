@@ -69,7 +69,7 @@ public class World : MonoBehaviour {
 			bird.localPosition = new Vector3(Random.Range(-offset,offset),2,Random.Range(-offset,offset));
 			bird.SetParent(Birds, false);
 
-		}
+                }
 
 	    int playerX = Random.Range(0, grid_u) - offset;
 	    int playerZ = Random.Range(0, grid_v) - offset;
@@ -80,7 +80,9 @@ public class World : MonoBehaviour {
 	    int powerUpX = Random.Range(0, grid_u) - grid_u / 2;
 	    int powerUpZ = Random.Range(0, grid_v) - grid_v / 2;
 
-	    powerUp.position = new Vector3(powerUpX, 0.6f, powerUpZ);
+	    powerUp.gameObject.SetActive(true);
+
+        powerUp.position = new Vector3(powerUpX, 0.6f, powerUpZ);
         player.position = new Vector3(playerX, 0.6f, playerZ);
 	    goal.position = new Vector3(goalX, 0.6f, goalZ);
         
