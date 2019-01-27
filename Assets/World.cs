@@ -73,7 +73,7 @@ public class World : MonoBehaviour {
 			
 			Transform road = Instantiate(roadObject);
 			road.SetParent(Roads, false);
-			road.localPosition = is_u ? new Vector3(road_coordinate,0,k - 10) : new Vector3(k - 10,0,road_coordinate);
+			road.localPosition = is_u ? new Vector3(road_coordinate,0,k - 9.55f) : new Vector3(k - 9.55f,0,road_coordinate);
 			if(is_u) {
 				road.Rotate(0,90,0);
 				worldGrid[road_coordinate + 10, k] = road;
@@ -95,19 +95,19 @@ public class World : MonoBehaviour {
 		
 	}
 
-    public void endGame(bool isWin)
-    {
-        _isWin = isWin;
-        _gameOver = true;
-    }
+	public void endGame(bool isWin)
+	{
+			_isWin = isWin;
+			_gameOver = true;
+	}
 
-    public bool isGameOver()
-    {
-        return _gameOver;
-    }
+	public bool isGameOver()
+	{
+			return _gameOver;
+	}
 
-    public bool isWin()
-    {
-        return _isWin;
-    }
+	public bool isWin()
+	{
+			return _isWin;
+	}
 }

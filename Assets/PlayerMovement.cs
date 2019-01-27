@@ -5,20 +5,16 @@ public class PlayerMovement : MonoBehaviour {
 
 	public float speed = 5.0f;
 
-<<<<<<< HEAD
     public Transform goal;
     public World world;
 
 	private Rigidbody self;
-=======
-	private Transform self;
->>>>>>> efd18d83ead2ca4f894c9a1f29513eb5e58ba7ef
 	private float inputX;
 	private float inputY;
 	private Vector2 cumulativeMovement;
 
 	void Start () {
-		self = GetComponent<Transform> ();
+		self = GetComponent<Rigidbody> ();
 	}
 
 	void Update ()
