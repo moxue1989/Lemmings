@@ -60,9 +60,11 @@ public class World : MonoBehaviour {
 				}
 			}
 		}
-		
+
+		// plane
+		int plane_z = Random.Range(offset * -1,offset);
 		Transform plane = Instantiate(planeObject);
-	    plane.localPosition = new Vector3(14,8,0);
+	    plane.localPosition = new Vector3(14,8,plane_z);
 	    GameObjects.Add(plane.gameObject);
 	
 		for(int i = 0; i < bird_count; i++) {
