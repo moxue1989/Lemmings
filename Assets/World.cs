@@ -8,7 +8,7 @@ public class World : MonoBehaviour {
 	int grid_v = 20;
 	private Texture2D noiseTex;
 	[Range(1,4)] public int road_max;
-	Transform[,] worldGrid;
+	public Transform[,] worldGrid;
 	public Transform treeObject;
 	public Transform roadObject;
 	
@@ -48,6 +48,10 @@ public class World : MonoBehaviour {
 				}
 			}
 		}
+
+		// call navmesh builder
+		// feed result to actor for pathfinding
+
 	}
 
 	void DrawRoad (bool is_u, int road_coordinate) {
