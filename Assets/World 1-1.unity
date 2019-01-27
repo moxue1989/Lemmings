@@ -572,9 +572,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _world: {fileID: 1013634757}
   score: {fileID: 1407327721}
+  timer: {fileID: 1407327721}
   _wins: 0
   _loses: 0
-  _playAgain: 0
 --- !u!4 &1163702075
 Transform:
   m_ObjectHideFlags: 0
@@ -721,7 +721,7 @@ SpriteRenderer:
   m_Size: {x: 0.08, y: 0.08}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
 --- !u!4 &1272937415
 Transform:
@@ -730,7 +730,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1272937411}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.13835895, y: 0.5262722, z: -0.23003364}
+  m_LocalPosition: {x: -0.13835895, y: 1.036, z: -0.23003364}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1132,6 +1132,7 @@ MonoBehaviour:
   speed: 5
   goal: {fileID: 546432583}
   world: {fileID: 1013634757}
+  timer: {fileID: 0}
 --- !u!1 &1981162083
 GameObject:
   m_ObjectHideFlags: 0
