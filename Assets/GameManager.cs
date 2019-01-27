@@ -5,7 +5,6 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public World _world;
-    public World _worldInstance;
     public int _wins = 0;
     public int _loses = 0;
 
@@ -18,16 +17,15 @@ public class GameManager : MonoBehaviour
 
     void InitGame()
     {
-        _worldInstance = Instantiate(_world);
         Debug.Log("game started");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (_worldInstance.isGameOver())
+        if (_world.isGameOver())
         {
-            if (_worldInstance.isWin())
+            if (_world.isWin())
             {
                 Debug.Log("game Win");
                 _wins++;
@@ -36,9 +34,7 @@ public class GameManager : MonoBehaviour
             {
                 _loses++;
             }
-
-            Destroy(_worldInstance.gameObject);
-            InitGame();
+            _world.reset();
         }
     }
 }
