@@ -2,21 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BlueBird : MonoBehaviour {
+public class BlueBird : Bird {
 
-	Transform bird;
-	float offset;
 	// Use this for initialization
-	void Start () {
-		bird = GetComponent<Transform>();
-		offset = Random.value;
+	float offset;
+	public override void Start () {
+		base.Start();
+		offset = Random.Range(1,5) / 10;
+
 	}
 	
 	// Update is called once per frame
-	void Update () {
-				
-		Vector3 position = bird.position;
-		position.y += Mathf.Sin(Time.time * offset * Mathf.PI * 2 ) / 20;
-		bird.localPosition = position;
-	}
+
 }

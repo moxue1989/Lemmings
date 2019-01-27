@@ -8,7 +8,8 @@ public class World : MonoBehaviour {
 	int grid_v = 20;
 	private Texture2D noiseTex;
 	[Range(1,4)] public int road_max;
-	[Range(2,10)] public int bird_count;
+	[Range(1,50)] public int tree_chance;
+	[Range(2,50)] public int bird_count;
 	public Transform[,] worldGrid;
 	public int[,] navGrid;
 	public Transform treeObject;
@@ -16,6 +17,8 @@ public class World : MonoBehaviour {
 	public Transform blueBirdObject;
 	public Transform yellowBirdObject;
 	public Transform Birds;
+	private bool _gameOver;
+	private bool _isWin;
 
 	public Transform Roads;
 	public Transform Trees;
@@ -45,7 +48,7 @@ public class World : MonoBehaviour {
 				
 				if (worldGrid[u,v] == null) {
 					float rnd = Random.value;
-					if( rnd < 0.02 ) {
+					if( rnd < (tree_chance * 0.01) ) {
 						worldGrid[u,v] = GenerateTree(u,v);
 					}
 				}
@@ -91,4 +94,20 @@ public class World : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    public void endGame(bool isWin)
+    {
+        _isWin = isWin;
+        _gameOver = true;
+    }
+
+    public bool isGameOver()
+    {
+        return _gameOver;
+    }
+
+    public bool isWin()
+    {
+        return _isWin;
+    }
 }
