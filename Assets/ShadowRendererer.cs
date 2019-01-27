@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class ShadowRendererer : MonoBehaviour {
 	Renderer renderer;
@@ -8,6 +9,7 @@ public class ShadowRendererer : MonoBehaviour {
 	void Start () {
 		renderer = GetComponent<Renderer>();
 		renderer.receiveShadows = true;
+		renderer.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
 	}
 	
 	// Update is called once per frame

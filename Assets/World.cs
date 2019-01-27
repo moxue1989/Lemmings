@@ -82,8 +82,8 @@ public class World : MonoBehaviour {
 
 	    powerUp.gameObject.SetActive(true);
 
-        powerUp.position = new Vector3(powerUpX, 0.6f, powerUpZ);
-        player.position = new Vector3(playerX, 0.6f, playerZ);
+			powerUp.position = new Vector3(powerUpX, 0.6f, powerUpZ);
+			player.position = new Vector3(playerX, 0.6f, playerZ);
 	    goal.position = new Vector3(goalX, 0.6f, goalZ);
         
         // call navmesh builder
