@@ -24,11 +24,17 @@ public class PlayerMovement : MonoBehaviour {
 	    Vector3 selfPosition = self.transform.position;
 
 	    Vector3 vector3 = goalPosition - selfPosition;
+        
 
 	    if (vector3.magnitude <= 1)
 	    {
             world.endGame(true);
 	    }
+
+	    if (selfPosition.y <= -1)
+	    {
+	        world.endGame(false);
+        }
 	}
 
 	void FixedUpdate(){
