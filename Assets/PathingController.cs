@@ -121,14 +121,13 @@ public class PathingController
         Debug.Log("I was queried.");
         Debug.Log(n);
 
-        return new Vector3(n.x, 1, n.y);
+        return world_coords_from_grid_coords(n.x,n.y);
     }
-    public float [] world_coords_from_grid_coords(int pos_x, int pos_y)
+    public Vector3 world_coords_from_grid_coords(int pos_x, int pos_y)
     {
         int offset_x = num_vertices_x/2;
         int offset_y = num_vertices_y/2;
-        float [] world_coordinates = {(float)(pos_x + offset_x), (float)(pos_y + offset_y)};
-        return world_coordinates;
+        return new Vector3((float)(pos_x + offset_x), 1, (float)(pos_y + offset_y));
     }
     private int f_neighborhood(int x, int y)
     {
