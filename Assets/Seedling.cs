@@ -7,6 +7,7 @@ public class Player : MonoBehaviour {
 
 	public Rigidbody rb;
     protected internal int force;
+    public GameObject timer;
 
     // Use this for initialization
 	void Start () {

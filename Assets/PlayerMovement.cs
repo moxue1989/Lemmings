@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour {
 
 	public Transform goal;
 	public World world;
+    public GameObject timer;
 
 	private Rigidbody self;
 	private float inputX;
