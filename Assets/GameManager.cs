@@ -38,7 +38,8 @@ public class GameManager : MonoBehaviour
                 _loses++;
             }
             _world.reset();
-            score.GetComponent<TextMesh>().text = "Score " + _wins;
+            score.GetComponent<TextMesh>().text = "Score " + _wins 
+                + "\nLosses " + _loses;
         }
     }
 }
