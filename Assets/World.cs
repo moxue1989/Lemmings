@@ -17,6 +17,8 @@ public class World : MonoBehaviour {
 	public Transform blueBirdObject;
 	public Transform yellowBirdObject;
 	public Transform Birds;
+	private bool _gameOver;
+	private bool _isWin;
 
 	public Transform Roads;
 	public Transform Trees;
@@ -92,4 +94,20 @@ public class World : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    public void endGame(bool isWin)
+    {
+        _isWin = isWin;
+        _gameOver = true;
+    }
+
+    public bool isGameOver()
+    {
+        return _gameOver;
+    }
+
+    public bool isWin()
+    {
+        return _isWin;
+    }
 }
