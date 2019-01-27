@@ -113,7 +113,7 @@ public class World : MonoBehaviour {
 	Transform GenerateTree (int u, int v) {
 		Transform tree = Instantiate(treeObject);
 	    GameObjects.Add(tree.gameObject);
-	    tree.localPosition = new Vector3(u - offset,1,v - offset);
+	    tree.localPosition = new Vector3(u - offset,Random.value,v - offset);
 		tree.SetParent(Trees, false);
 		return tree;
 	}
