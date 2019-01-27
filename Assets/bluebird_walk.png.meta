@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 0fdd21ff07ef8724384c5de355e2baf8
+guid: bf6460585e3318b4281a3ad34af3be27
 TextureImporter:
   fileIDToRecycleName:
-    21300000: yellowbird_walk_0
-    21300002: yellowbird_walk_1
-    21300004: yellowbird_walk_2
-    21300006: yellowbird_walk_3
+    21300000: bluebird_walk_0
+    21300002: bluebird_walk_1
+    21300004: bluebird_walk_2
+    21300006: bluebird_walk_3
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: yellowbird_walk_0
+      name: bluebird_walk_0
       rect:
         serializedVersion: 2
         x: 0
@@ -127,7 +127,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: yellowbird_walk_1
+      name: bluebird_walk_1
       rect:
         serializedVersion: 2
         x: 16
@@ -141,7 +141,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: yellowbird_walk_2
+      name: bluebird_walk_2
       rect:
         serializedVersion: 2
         x: 32
@@ -155,7 +155,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: yellowbird_walk_3
+      name: bluebird_walk_3
       rect:
         serializedVersion: 2
         x: 48
