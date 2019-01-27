@@ -5,6 +5,9 @@ public class PlayerMovement : MonoBehaviour {
 
 	public float speed = 5.0f;
 
+    public Transform goal;
+    public World world;
+
 	private Rigidbody self;
 	private float inputX;
 	private float inputY;
@@ -14,8 +17,18 @@ public class PlayerMovement : MonoBehaviour {
 		self = GetComponent<Rigidbody> ();
 	}
 
-	void Update () {
+	void Update ()
+	{
+	    Vector3 goalPosition = goal.position;
 
+	    Vector3 selfPosition = self.transform.position;
+
+	    Vector3 vector3 = goalPosition - selfPosition;
+
+	    if (vector3.magnitude <= 1)
+	    {
+            world.endGame(true);
+	    }
 	}
 
 	void FixedUpdate(){
