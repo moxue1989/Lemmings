@@ -19,50 +19,25 @@ public class PlayerMovement : MonoBehaviour {
 
 	void Update ()
 	{
-		Vector3 goalPosition = goal.position;
+	    Vector3 goalPosition = goal.position;
 
-		Vector3 selfPosition = self.transform.position;
+	    Vector3 selfPosition = self.transform.position;
 
-		Vector3 vector3 = goalPosition - selfPosition;
-        
-		
+	    Vector3 vector3 = goalPosition - selfPosition;
 
 	    if (vector3.magnitude <= 1)
 	    {
             world.endGame(true);
 	    }
-
-	    if (selfPosition.y <= -1)
-	    {
-	        world.endGame(false);
-        }
 	}
 
-    void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.name == "PowerUp")
-        {
-            collision.gameObject.SetActive(false);
-            StartCoroutine(SpeedPowerUp());
-        }
-    }
-
-    IEnumerator SpeedPowerUp()
-    {
-        speed *= 2;
-        yield return new WaitForSeconds(20f);
-        speed /= 2;
-    }
-
-    void FixedUpdate(){
+	void FixedUpdate(){
 		
 			self.position += ( speed * Time.deltaTime * GetMovement () );
 		
 	}
 
 	private Vector3 GetMovement(){
-		
-
 		float horizontal = Input.GetAxisRaw("Horizontal");
 		float vertical = Input.GetAxisRaw("Vertical");
 		float up = horizontal + vertical == 0f ? 0 : 1;

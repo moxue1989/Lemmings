@@ -25,9 +25,9 @@ public class AgentMovement : MonoBehaviour {
 		Debug.Log ( self.position );
 	}
 
-	private Vector2 generatePosition(float speed){
-		float sin = Mathf.Sin(speed * Time.time);
-		return (new Vector2 (amplitude * sin + startingPosition.x, startingPosition.y));
-	}
+    private Vector2 generatePosition(float speed){
+			  float sin = Mathf.Sin(speed * Time.time);
+        return (new Vector2 (amplitude * sin + startingPosition.x, startingPosition.y));
+    }
 
 }

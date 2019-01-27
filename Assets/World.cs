@@ -69,7 +69,7 @@ public class World : MonoBehaviour {
 			bird.localPosition = new Vector3(Random.Range(-offset,offset),2,Random.Range(-offset,offset));
 			bird.SetParent(Birds, false);
 
-		}
+                }
 
 	    int playerX = Random.Range(0, grid_u) - offset;
 	    int playerZ = Random.Range(0, grid_v) - offset;
