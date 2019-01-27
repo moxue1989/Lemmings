@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour {
 	public float speed = 5.0f;
 
 	public Transform goal;
+	public Transform timer;
 	public World world;
 
 	private Rigidbody self;
@@ -21,7 +22,11 @@ public class PlayerMovement : MonoBehaviour {
 
 	void Update ()
 	{
-	    
+		Vector3 playerPosition = transform.position;
+	    playerPosition.y += 1;
+		// timer.localPosition = playerPosition;
+		timer.localEulerAngles = new Vector3(0,0,0);
+
 		Vector3 goalPosition = goal.position;
 
 	    Vector3 selfPosition = self.transform.position;
