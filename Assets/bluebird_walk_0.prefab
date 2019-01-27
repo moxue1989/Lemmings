@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 95217690950750922}
   - component: {fileID: 65542573860660316}
   - component: {fileID: 54379715537860750}
+  - component: {fileID: 114597823393876136}
   m_Layer: 0
   m_Name: bluebird_walk_0
   m_TagString: Untagged
@@ -87,6 +88,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114597823393876136
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1955480898610854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7165f1e8ad67e842b10d162baaf55cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offset: 0
 --- !u!212 &212206816695839710
 SpriteRenderer:
   m_ObjectHideFlags: 1

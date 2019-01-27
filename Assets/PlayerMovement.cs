@@ -9,17 +9,20 @@ public class PlayerMovement : MonoBehaviour {
 	public World world;
 
 	private Rigidbody self;
+	public Collider Ground;
 	private float inputX;
 	private float inputY;
 	private Vector2 cumulativeMovement;
 
 	void Start () {
 		self = GetComponent<Rigidbody> ();
+		Debug.Log(transform.eulerAngles);
 	}
 
 	void Update ()
 	{
-	    Vector3 goalPosition = goal.position;
+	    
+		Vector3 goalPosition = goal.position;
 
 	    Vector3 selfPosition = self.transform.position;
 
@@ -34,6 +37,7 @@ public class PlayerMovement : MonoBehaviour {
 	    {
 	        world.endGame(false);
         }
+
 	}
     void OnCollisionEnter(Collision collision)
     {
@@ -42,6 +46,12 @@ public class PlayerMovement : MonoBehaviour {
             collision.gameObject.SetActive(false);
             StartCoroutine(SpeedPowerUp());
         }
+		if (collision.gameObject.name == "Ground")
+		{
+			self.velocity *= 0;
+			transform.localEulerAngles = new Vector3(0,45,0);
+		}
+
     }
 
     IEnumerator SpeedPowerUp()
@@ -51,8 +61,28 @@ public class PlayerMovement : MonoBehaviour {
         speed /= 2;
     }
     void FixedUpdate(){
-		
-			self.position += ( speed * Time.deltaTime * GetMovement () );
+		self.AddForce(new Vector3(0,0,0));
+		if (Input.GetMouseButtonDown(0)) {
+			RaycastHit hit;
+			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+      if (Physics.Raycast(ray, out hit, 100.0f))
+      {
+        // Debug.Log("You selected the " + hit.transform.name);
+		// var item = GameObject.CreatePrimitive(PrimitiveType.Cube);
+		// item.transform.position = hit.point;
+	  }
+
+			// Debug.Log("Mouse 1 Clicked");
+			Vector3 vectorForce = (hit.point - self.position);
+			vectorForce.y += 5;
+			vectorForce *= 70;
+			if(self.velocity.magnitude < 0.1){
+				self.AddForce(vectorForce);
+			}
+			// Debug.Log(self.velocity.magnitude);
+		}
+		// self.position += ( speed * Time.deltaTime * GetMovement () );
 		
 	}
 
