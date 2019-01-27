@@ -56,7 +56,6 @@ public class GameManager : MonoBehaviour
             }
 
             timer.GetComponent<TextMesh>().text = "" + timeRemaining;
-            score.GetComponent<TextMesh>().text = "Score " + _wins;
         }
     }
 }
