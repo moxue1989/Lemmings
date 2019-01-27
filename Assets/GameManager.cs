@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
                 _loses++;
             }
 
-            Destroy(_worldInstance);
+            Destroy(_worldInstance.gameObject);
             InitGame();
         }
     }
