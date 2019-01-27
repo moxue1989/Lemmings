@@ -193,6 +193,7 @@ GameObject:
   m_Component:
   - component: {fileID: 501545223}
   - component: {fileID: 501545224}
+  - component: {fileID: 501545225}
   m_Layer: 0
   m_Name: Title
   m_TagString: Untagged
@@ -206,13 +207,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 501545222}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.38268343, z: 0, w: 0.92387956}
   m_LocalPosition: {x: 0, y: 5, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 1013634756}
   m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
 --- !u!212 &501545224
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -257,6 +258,17 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &501545225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 501545222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95ebdb4352880bb4ca7c7006002e1714, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &546432582
 GameObject:
   m_ObjectHideFlags: 0
@@ -418,10 +430,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8859b72502822ea46a9ecb583384a787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  world_size: 93
-  road_max: 2
-  tree_chance: 6
-  bird_count: 10
+  world_size: 100
+  road_max: 6
+  tree_chance: 10.01
+  bird_count: 31
   groundObject: {fileID: 1708955051}
   treeObject: {fileID: 4815090755096980, guid: 566e5d986b082324286b4f86db98954e, type: 2}
   roadObject: {fileID: 4888625694033108, guid: 1c9070bd78934a14a8f944c70f030246, type: 2}
@@ -510,7 +522,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1132493525}
   m_LocalRotation: {x: 0.22507088, y: 0.37115395, z: -0.09322741, w: 0.89604497}
-  m_LocalPosition: {x: -12.47, y: 5.48, z: 2.4}
+  m_LocalPosition: {x: -8, y: 5.48, z: -8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -626,15 +638,15 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1407327721}
-  m_Text: 'Score: 0'
+  m_Text: 'SCORE: 0'
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
   m_Anchor: 0
   m_Alignment: 0
   m_TabSize: 4
-  m_FontSize: 0
-  m_FontStyle: 0
+  m_FontSize: 128
+  m_FontStyle: 1
   m_RichText: 1
   m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
   m_Color:
@@ -680,13 +692,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1407327721}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.13320921, y: 4.812299, z: -2.323227}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0, y: 0.38268343, z: 0, w: 0.92387956}
+  m_LocalPosition: {x: 2.22, y: 5, z: 4.95}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
 --- !u!1 &1708955047
 GameObject:
   m_ObjectHideFlags: 0
@@ -719,7 +731,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 86d250d896f2bd74f848d8637db0efe5, type: 2}
+  - {fileID: 2100000, guid: bd69594cd4e288141b16b7c947904015, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -811,7 +823,6 @@ GameObject:
   - component: {fileID: 1858174566}
   - component: {fileID: 1858174565}
   - component: {fileID: 1858174568}
-  - component: {fileID: 1858174569}
   - component: {fileID: 1858174570}
   m_Layer: 0
   m_Name: Start
@@ -901,17 +912,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1858174569
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1858174563}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc04ebd5d59fd1b4a9766290dd17eec1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1858174570
 MonoBehaviour:
   m_ObjectHideFlags: 0

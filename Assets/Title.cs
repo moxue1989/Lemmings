@@ -13,7 +13,9 @@ public class Title : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		Vector3 position = title.position;
-		position.y += Mathf.Sin(Time.time);
-		title.localPosition = title.position;
+		position.y += Mathf.Sin(Time.time) / 200;
+
+		Debug.Log(position.y);
+		title.localPosition = position;
 	}
 }

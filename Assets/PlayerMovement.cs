@@ -19,12 +19,13 @@ public class PlayerMovement : MonoBehaviour {
 
 	void Update ()
 	{
-	    Vector3 goalPosition = goal.position;
+		Vector3 goalPosition = goal.position;
 
-	    Vector3 selfPosition = self.transform.position;
+		Vector3 selfPosition = self.transform.position;
 
-	    Vector3 vector3 = goalPosition - selfPosition;
+		Vector3 vector3 = goalPosition - selfPosition;
         
+		
 
 	    if (vector3.magnitude <= 1)
 	    {
@@ -44,6 +45,8 @@ public class PlayerMovement : MonoBehaviour {
 	}
 
 	private Vector3 GetMovement(){
+		
+
 		float horizontal = Input.GetAxisRaw("Horizontal");
 		float vertical = Input.GetAxisRaw("Vertical");
 		float up = horizontal + vertical == 0f ? 0 : 1;
