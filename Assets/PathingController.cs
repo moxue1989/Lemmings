@@ -102,11 +102,16 @@ public class PathingController
             }
         }
     }
-    public void query_graph(int pos_x, int pos_y, int goal_x, int goal_y)
+    public int[] query_graph(int pos_x, int pos_y, int goal_x, int goal_y)
     {
         int i=pos_x,j=pos_y,k=goal_x,l=goal_y;
+        GridCoord v = next[i,j,k,l];
+
         Debug.Log("I was queried.");
         Debug.Log(next[i,j,k,l]);
+        
+        int[] val = new int[] {v.x,v.y};
+        return val;
     }
     private int f_neighborhood(int x, int y)
     {
@@ -127,8 +132,8 @@ public class PathingController
 
 public struct GridCoord
 {
-    int x,y;
-    double dist;
+    public int x,y;
+    public double dist;
     public GridCoord(int p1, int p2, double d)
     {
         x=p1;
