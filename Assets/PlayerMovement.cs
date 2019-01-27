@@ -17,7 +17,6 @@ public class PlayerMovement : MonoBehaviour {
 
 	void Start () {
 		self = GetComponent<Rigidbody> ();
-		Debug.Log(transform.eulerAngles);
 	}
 
 	void Update ()

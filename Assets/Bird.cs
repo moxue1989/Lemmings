@@ -30,6 +30,10 @@ public class Bird : MonoBehaviour
 
     position.y += Mathf.Sin(Time.time * offset * Mathf.PI * 2) / 20;
     position.y += Mathf.Sin(Time.time * Mathf.PI * 4) / 50;
+    
+    // PathingController.get_instance().query_graph(position.x,position.z);
+    
     bird.localPosition = position;
+    
   }
 }

@@ -12,7 +12,7 @@ public class World : MonoBehaviour {
 	[Range(1,6)] public int road_max;
 	[Range(0.5f,20)] public float tree_chance;
 	[Range(2,50)] public int bird_count;
-	public Transform[,] worldGrid;
+	public int[,] worldGrid;
 	public int[,] navGrid;
 	public Transform groundObject;
 	public Transform treeObject;
@@ -20,16 +20,16 @@ public class World : MonoBehaviour {
 	public Transform blueBirdObject;
 	public Transform yellowBirdObject;
 	public Transform Birds;
-    public Transform player;
-    public Transform goal;
-    public Transform powerUp;
-
-    private bool _gameOver;
+	public Transform player;
+	public Transform goal;
+	public Transform powerUp;
+	private bool _gameOver;
 	private bool _isWin;
 	public Transform Roads;
 	public Transform Trees;
 	int road_u;
 	int road_v;
+	public string[,] grid;
 	protected internal List<GameObject> GameObjects = new List<GameObject>();
 
 	void Start () {
@@ -37,21 +37,23 @@ public class World : MonoBehaviour {
 		grid_u = world_size;
 		grid_v = world_size;
 		offset = world_size / 2;
+		grid = new string[grid_u, grid_v];
 
 		groundObject.localScale = new Vector3(grid_u, 0.1f, grid_v);
-    worldGrid = new Transform[grid_u, grid_v];
+    worldGrid = new int[grid_u, grid_v];
         
 		for(int i = 0; i < road_max; i++) {
 			// make roads
 			bool is_u = Random.value > 0.5f;
 			int road_coordinate = Random.Range(-7, 7);
 			DrawRoad(is_u, road_coordinate);
+			
 		}
 
 		for(int u = 0; u < grid_u; u++) {
 			for(int v = 0; v < grid_v; v++) {
 				
-				if (worldGrid[u,v] == null) {
+				if (worldGrid[u,v] == 0) {
 					float rnd = Random.value;
 					if( rnd < (tree_chance * 0.01) ) {
 						worldGrid[u,v] = GenerateTree(u,v);
@@ -66,10 +68,15 @@ public class World : MonoBehaviour {
 
 			GameObjects.Add(bird.gameObject);
 
-			bird.localPosition = new Vector3(Random.Range(-offset,offset),2,Random.Range(-offset,offset));
+			bird.localPosition = new Vector3(
+				Random.Range(-offset,offset),
+				2,
+				Random.Range(-offset,offset)
+			);
+
 			bird.SetParent(Birds, false);
 
-                }
+    }
 
 	    int playerX = Random.Range(0, grid_u) - offset;
 	    int playerZ = Random.Range(0, grid_v) - offset;
@@ -86,9 +93,10 @@ public class World : MonoBehaviour {
 			player.position = new Vector3(playerX, 0.6f, playerZ);
 	    goal.position = new Vector3(goalX, 0.6f, goalZ);
         
-        // call navmesh builder
-        // feed result to actor for pathfinding
-
+			// call navmesh builder
+			// feed result to actor for pathfinding
+			PathingController.get_instance().call_me_first(worldGrid, grid_u, grid_v);
+			PathingController.get_instance().recompute_minimums();
     }
 
     public void reset()
@@ -110,24 +118,24 @@ public class World : MonoBehaviour {
 			road.localPosition = is_u ? new Vector3(road_coordinate,0,k - (offset - .5f)) : new Vector3(k - (offset - .5f),0,road_coordinate);
 			if(is_u) {
 				road.Rotate(0,90,0);
-				worldGrid[road_coordinate + 10, k] = road;
+				worldGrid[road_coordinate + offset, k] = 20;
 			} else {
-				worldGrid[k, road_coordinate + 10] = road;
+				worldGrid[k, road_coordinate + offset] = 20;
 			}
 			
 		}
 	}	
-	Transform GenerateTree (int u, int v) {
+
+	int GenerateTree (int u, int v) {
 		Transform tree = Instantiate(treeObject);
 	    GameObjects.Add(tree.gameObject);
 	    tree.localPosition = new Vector3(u - offset,Random.value,v - offset);
 		tree.SetParent(Trees, false);
-		return tree;
+		return 100;
 	}
 
 	// Update is called once per frame
 	void Update () {
-		
 	}
 
 	public void endGame(bool isWin)
