@@ -19,6 +19,7 @@ public class World : MonoBehaviour {
 	public Transform roadObject;
 	public Transform blueBirdObject;
 	public Transform yellowBirdObject;
+	public Transform planeObject;
 	public Transform Birds;
     public Transform player;
     public Transform goal;
@@ -59,7 +60,11 @@ public class World : MonoBehaviour {
 				}
 			}
 		}
-
+		
+		Transform plane = Instantiate(planeObject);
+	    plane.localPosition = new Vector3(14,8,0);
+	    GameObjects.Add(plane.gameObject);
+	
 		for(int i = 0; i < bird_count; i++) {
 			bool is_blueBird = Random.value > 0.5f;
 			Transform bird = Instantiate(is_blueBird ? blueBirdObject : yellowBirdObject);
