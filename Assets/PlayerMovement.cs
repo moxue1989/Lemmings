@@ -7,7 +7,6 @@ public class PlayerMovement : MonoBehaviour {
 
 	public Transform goal;
 	public World world;
-    public GameObject timer;
 
 	private Rigidbody self;
 	private float inputX;
@@ -30,6 +29,11 @@ public class PlayerMovement : MonoBehaviour {
 	    {
             world.endGame(true);
 	    }
+
+	    if (selfPosition.y <= -1)
+	    {
+	        world.endGame(false);
+        }
 	}
     void OnCollisionEnter(Collision collision)
     {
