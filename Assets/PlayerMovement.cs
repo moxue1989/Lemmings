@@ -20,11 +20,14 @@ public class PlayerMovement : MonoBehaviour {
 
 	void FixedUpdate(){
 		self.MovePosition (
-			self.position + ( speed * Time.deltaTime * getInput () )
+			self.position + ( speed * Time.deltaTime * GetMovement () )
 		);
 	}
 
-	private Vector3 getInput(){
-		return (new Vector3 (Input.GetAxisRaw ("Horizontal"),0, Input.GetAxisRaw ("Vertical"))).normalized;
+	private Vector3 GetMovement(){
+		float horizontal = Input.GetAxisRaw("Horizontal");
+		float vertical = Input.GetAxisRaw("Vertical");
+		float up = horizontal + vertical == 0f ? 0 : 1;
+		return (new Vector3 (Input.GetAxisRaw ("Horizontal"),up, Input.GetAxisRaw ("Vertical"))).normalized;
 	}
 }
