@@ -570,12 +570,12 @@ TextMesh:
   m_GameObject: {fileID: 1159844678}
   m_Text: Hello World
   m_OffsetZ: 0
-  m_CharacterSize: 1
+  m_CharacterSize: 0.175
   m_LineSpacing: 1
   m_Anchor: 0
   m_Alignment: 0
   m_TabSize: 4
-  m_FontSize: 0
+  m_FontSize: 128
   m_FontStyle: 0
   m_RichText: 1
   m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
@@ -623,10 +623,10 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1159844678}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3, y: 2, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.663846, y: 0.397, z: 0.08908137}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.10000001}
   m_Children: []
-  m_Father: {fileID: 1858174564}
+  m_Father: {fileID: 1622011717}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1163702073
@@ -1020,7 +1020,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0.38268343, z: 0, w: 0.92387956}
   m_LocalPosition: {x: 0.5321, y: 1.025, z: 0.238}
   m_LocalScale: {x: 5, y: 5, z: 5}
-  m_Children: []
+  m_Children:
+  - {fileID: 1159844681}
   m_Father: {fileID: 1013634756}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
@@ -1125,6 +1126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   goal: {fileID: 546432583}
+  timer: {fileID: 1159844681}
   world: {fileID: 1013634757}
   Ground: {fileID: 1708955049}
 --- !u!1 &1708955047
@@ -1268,8 +1270,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1.01, z: 2.9}
   m_LocalScale: {x: 0.5, y: 1, z: 0.5}
-  m_Children:
-  - {fileID: 1159844681}
+  m_Children: []
   m_Father: {fileID: 1013634756}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1354,6 +1355,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   goal: {fileID: 546432583}
+  timer: {fileID: 0}
   world: {fileID: 1013634757}
   Ground: {fileID: 0}
 --- !u!1 &1981162083
