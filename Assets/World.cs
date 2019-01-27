@@ -19,6 +19,7 @@ public class World : MonoBehaviour {
 	public Transform roadObject;
 	public Transform blueBirdObject;
 	public Transform yellowBirdObject;
+	public Transform planeObject;
 	public Transform Birds;
 	public Transform player;
 	public Transform goal;
@@ -65,6 +66,15 @@ public class World : MonoBehaviour {
 		PathingController.get_instance().call_me_first(worldGrid, grid_u, grid_v);
 		PathingController.get_instance().recompute_minimums();
 			
+		// plane
+		int plane_z = Random.Range(offset * -1,offset);
+		Transform plane = Instantiate(planeObject);
+		GameObject plane_object = plane.gameObject;
+		var script = plane_object.GetComponent<Plane>();
+		script.plane_velocity = Random.Range(1.0f,2.0f);
+	    plane.localPosition = new Vector3(14,8,plane_z);
+	    GameObjects.Add(plane.gameObject);
+	
 		for(int i = 0; i < bird_count; i++) {
 			bool is_blueBird = Random.value > 0.5f;
 			Transform bird = Instantiate(is_blueBird ? blueBirdObject : yellowBirdObject);
