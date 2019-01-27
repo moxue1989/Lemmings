@@ -21,9 +21,9 @@ GameObject:
   - component: {fileID: 4988437873106118}
   - component: {fileID: 212861568872426540}
   - component: {fileID: 95041051620315342}
-  - component: {fileID: 54206332126025930}
-  - component: {fileID: 65406713809610838}
   - component: {fileID: 114186729144102194}
+  - component: {fileID: 54001232880376654}
+  - component: {fileID: 65766104352683194}
   m_Layer: 0
   m_Name: yellowbird_walk_0
   m_TagString: Untagged
@@ -44,7 +44,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
---- !u!54 &54206332126025930
+--- !u!54 &54001232880376654
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -59,7 +59,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &65406713809610838
+--- !u!65 &65766104352683194
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}

@@ -14,8 +14,6 @@ public class Title : MonoBehaviour {
 	void Update () {
 		Vector3 position = title.position;
 		position.y += Mathf.Sin(Time.time) / 200;
-
-		Debug.Log(position.y);
 		title.localPosition = position;
 	}
 }
