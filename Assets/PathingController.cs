@@ -113,6 +113,23 @@ public class PathingController
         int[] val = new int[] {v.x,v.y};
         return val;
     }
+    public Vector3 query_graph_to_vec3(int pos_x, int pos_y, int goal_x, int goal_y)
+    {
+        int i=pos_x,j=pos_y,k=goal_x,l=goal_y;
+        GridCoord n = next[i,j,k,l];
+
+        Debug.Log("I was queried.");
+        Debug.Log(n);
+
+        return new Vector3(n.x, 1, n.y);
+    }
+    public float [] world_coords_from_grid_coords(int pos_x, int pos_y)
+    {
+        int offset_x = num_vertices_x/2;
+        int offset_y = num_vertices_y/2;
+        float [] world_coordinates = {(float)(pos_x + offset_x), (float)(pos_y + offset_y)};
+        return world_coordinates;
+    }
     private int f_neighborhood(int x, int y)
     {
         for(int i=0; i<x-1; i++){ // Can always consider East
