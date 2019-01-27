@@ -6,7 +6,7 @@ public class PathingController
 {
     static PathingController instance;
     double [,,,] dist;
-    GridCoord [,] next;
+    GridCoord [,,,] next;
     int [,] weights;
     int num_vertices;
     int num_vertices_x;
@@ -28,7 +28,7 @@ public class PathingController
         num_vertices = x*y;
         weights = materials;
         dist = new double[x,y,x,y];
-        next = new GridCoord [x,y];
+        next = new GridCoord [x,y,x,y];
         Debug.Log(new Vector2(x,y));
         // For each source-destination vertex pair, initialize:
         for(int i=0;i<x;i++){
@@ -93,7 +93,7 @@ public class PathingController
                                 double alt = dist[i,j,a,b] + dist[a,b,k,l];
                                 if(alt < dist[i,j,k,l]){
                                     dist[i,j,k,l] = alt;
-                                    next[i,j] = new GridCoord(k,l,alt);
+                                    next[i,j,k,l] = new GridCoord(k,l,alt);
                                 }
                             }
                         }
@@ -102,10 +102,11 @@ public class PathingController
             }
         }
     }
-    public void query_graph(int u, int v)
+    public void query_graph(int pos_x, int pos_y, int goal_x, int goal_y)
     {
+        int i=pos_x,j=pos_y,k=goal_x,l=goal_y;
         Debug.Log("I was queried.");
-        Debug.Log(next[u,v]);
+        Debug.Log(next[i,j,k,l]);
     }
     private int f_neighborhood(int x, int y)
     {
