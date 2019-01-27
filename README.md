@@ -21,6 +21,8 @@
 		- brick
 		- door
 		- window
+		- forest_floor
+		- asphalt
 	- Player
 		- seed_player
 	- Seed Cam 
@@ -32,6 +34,13 @@
 		- greenbird_walk
 		- lovebird_walk
 		- yellowbird_walk
+	- Other Characters
+		- alien
+		- dog
+		- satellite
+		- plane
+		- satellite
+			
 	- Buttons
 		- button_start
 	- Text Boxes
@@ -39,6 +48,7 @@
 		- button_win
 		- button_fail
 		- logo (game logo)
+		- scoreboard
 		
 	Audio
 	- UI SFX
