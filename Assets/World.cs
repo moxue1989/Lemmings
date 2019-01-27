@@ -20,9 +20,11 @@ public class World : MonoBehaviour {
 	public Transform blueBirdObject;
 	public Transform yellowBirdObject;
 	public Transform Birds;
-	public Transform player;
-	public Transform goal;
-	private bool _gameOver;
+    public Transform player;
+    public Transform goal;
+    public Transform powerUp;
+
+    private bool _gameOver;
 	private bool _isWin;
 	public Transform Roads;
 	public Transform Trees;
@@ -75,8 +77,11 @@ public class World : MonoBehaviour {
 	    int goalX = Random.Range(0, grid_u) - offset;
 	    int goalZ = Random.Range(0, grid_v) - offset;
 
+	    int powerUpX = Random.Range(0, grid_u) - grid_u / 2;
+	    int powerUpZ = Random.Range(0, grid_v) - grid_v / 2;
 
-	    player.position = new Vector3(playerX, 0.6f, playerZ);
+	    powerUp.position = new Vector3(powerUpX, 0.6f, powerUpZ);
+        player.position = new Vector3(playerX, 0.6f, playerZ);
 	    goal.position = new Vector3(goalX, 0.6f, goalZ);
         
         // call navmesh builder

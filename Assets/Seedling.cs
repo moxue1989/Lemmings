@@ -6,14 +6,18 @@ public class Player : MonoBehaviour {
 
 
 	public Rigidbody rb;
+    protected internal int force;
 
-	// Use this for initialization
+    // Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody>();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		rb.AddForce(0,0,0);
-	}
+    
+
+    // Update is called once per frame
+    void Update ()
+    {
+        force = 0;
+        rb.AddForce(force,force,force);
+    }
 }

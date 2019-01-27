@@ -37,7 +37,23 @@ public class PlayerMovement : MonoBehaviour {
         }
 	}
 
-	void FixedUpdate(){
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.name == "PowerUp")
+        {
+            collision.gameObject.SetActive(false);
+            StartCoroutine(SpeedPowerUp());
+        }
+    }
+
+    IEnumerator SpeedPowerUp()
+    {
+        speed *= 2;
+        yield return new WaitForSeconds(20f);
+        speed /= 2;
+    }
+
+    void FixedUpdate(){
 		
 			self.position += ( speed * Time.deltaTime * GetMovement () );
 		

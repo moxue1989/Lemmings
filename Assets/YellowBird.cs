@@ -5,7 +5,6 @@ using UnityEngine;
 public class YellowBird : Bird {
 
 	// Use this for initialization
-	float offset;
 	public override	void Start () {
 		base.Start();
 		offset = Random.Range(4,9) / 10;
