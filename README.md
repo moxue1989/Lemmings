@@ -18,13 +18,17 @@
 		- tree
 		- fertile_ground
 	- Wall Tiles
-		- brick
 		- door
 		- window
 		- forest_floor
 		- asphalt
+		- brick
+		- gray brick
+		- wood
+		- stucco
 	- Player
 		- seed_player
+		- seed cam
 	- Seed Cam 
 		- seed_spin
 		- seed_stand
@@ -49,6 +53,7 @@
 		- button_fail
 		- logo (game logo)
 		- scoreboard
+		
 		
 	Audio
 	- UI SFX
