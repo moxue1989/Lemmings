@@ -4,40 +4,39 @@ using UnityEngine;
 
 public class World : MonoBehaviour {
 
-	int grid_u = 20;
-	int grid_v = 20;
+	[Range(10,100)] public int world_size;
+	int grid_u;
+	int grid_v;
+	int offset;
 	private Texture2D noiseTex;
 	[Range(1,4)] public int road_max;
 	[Range(1,50)] public int tree_chance;
 	[Range(2,50)] public int bird_count;
 	public Transform[,] worldGrid;
 	public int[,] navGrid;
+	public Transform groundObject;
 	public Transform treeObject;
 	public Transform roadObject;
 	public Transform blueBirdObject;
 	public Transform yellowBirdObject;
 	public Transform Birds;
-    public Transform player;
-
-    private bool _gameOver;
+	public Transform player;
+	private bool _gameOver;
 	private bool _isWin;
-
 	public Transform Roads;
 	public Transform Trees;
 	int road_u;
 	int road_v;
-    protected internal List<GameObject> GameObjects = new List<GameObject>();
+	protected internal List<GameObject> GameObjects = new List<GameObject>();
 
-    // Use this for initialization
 	void Start () {
 
-        // N roads
-        // birds
-        // park
-        // buildings
-	    // houses
-	    
-        worldGrid = new Transform[grid_u, grid_v];
+		grid_u = world_size;
+		grid_v = world_size;
+		offset = world_size / 2;
+
+		
+    worldGrid = new Transform[grid_u, grid_v];
         
 		for(int i = 0; i < road_max; i++) {
 			// make roads
@@ -64,7 +63,7 @@ public class World : MonoBehaviour {
 
 		    GameObjects.Add(bird.gameObject);
 
-            bird.localPosition = new Vector3(Random.Range(-8,8),2,Random.Range(-8,8));
+        bird.localPosition = new Vector3(Random.Range(-offset,offset),2,Random.Range(-offset,offset));
 			bird.SetParent(Birds, false);
 
 		}
