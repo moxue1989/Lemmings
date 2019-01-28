@@ -11,7 +11,7 @@ public class World : MonoBehaviour {
 	private Texture2D noiseTex;
 	[Range(1,6)] public int road_max;
 	[Range(0.5f,20)] public float tree_chance;
-	[Range(2,50)] public int bird_count;
+	[Range(1,50)] public int bird_count;
 	public int[,] worldGrid;
 	public int[,] navGrid;
 	public Transform groundObject;
@@ -63,8 +63,8 @@ public class World : MonoBehaviour {
 			}
 		}
 
-		PathingController.get_instance().call_me_first(worldGrid, grid_u, grid_v);
-		PathingController.get_instance().recompute_minimums();
+		// PathingController.get_instance().call_me_first(worldGrid, grid_u, grid_v);
+		// PathingController.get_instance().recompute_minimums();
 			
 		// plane
 		int plane_z = Random.Range(offset * -1,offset);
@@ -138,7 +138,7 @@ public class World : MonoBehaviour {
 		}
 	}	
 
-	int[] ReturnGridPosition(float x, float z) {
+	public int[] ReturnGridPosition(float x, float z) {
 		int u = Mathf.FloorToInt(x + offset);
 		int v = Mathf.FloorToInt(z + offset);
 		int[] val = {u,v};

@@ -36,6 +36,7 @@ public class PathingController
                 for(int k=0;k<x;k++){
                     for(int l=0;l<y;l++){
                         dist[i,j,k,l]=double.PositiveInfinity;
+                        next[i,j,k,l]=new GridCoord(k,l,Mathf.Infinity);
                     }
                 }
             }
@@ -93,7 +94,7 @@ public class PathingController
                                 double alt = dist[i,j,a,b] + dist[a,b,k,l];
                                 if(alt < dist[i,j,k,l]){
                                     dist[i,j,k,l] = alt;
-                                    next[i,j,k,l] = new GridCoord(k,l,alt);
+                                    next[i,j,k,l] = new GridCoord(a,b,alt);
                                 }
                             }
                         }
@@ -127,7 +128,7 @@ public class PathingController
     {
         int offset_x = num_vertices_x/2;
         int offset_y = num_vertices_y/2;
-        return new Vector3((float)(pos_x + offset_x), 1, (float)(pos_y + offset_y));
+        return new Vector3((float)(pos_x - offset_x), 1, (float)(pos_y - offset_y));
     }
     private int f_neighborhood(int x, int y)
     {

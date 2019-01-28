@@ -79,7 +79,7 @@ public class PlayerMovement : MonoBehaviour {
 
 			// Debug.Log("Mouse 1 Clicked");
 			Vector3 vectorForce = (hit.point - self.position);
-			vectorForce.y += 5;
+			vectorForce.y += 3;
 			vectorForce *= 70;
 			if(self.velocity.magnitude < 0.1){
 				self.AddForce(vectorForce);
